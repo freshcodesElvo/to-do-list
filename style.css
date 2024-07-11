@@ -1,0 +1,107 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("https://mrwallpaper.com/images/hd/minimalist-neon-lights-4k-purple-40k82xyg4n3au9cn.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main-card{
+    background: linear-gradient(90deg, rgba(1, 62, 43, 0.1) 0%, rgba(153, 153, 153, 0.1) 100%);
+    backdrop-filter: blur(15px);
+    border-radius: 5px;
+    border: 1px solid white;
+    color: white;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2.5em;
+    
+}
+.card-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+input{
+    width: 82%;
+    height: 35px;
+    outline: 0;
+    background: transparent;
+    border: 1px solid wheat;
+    border-radius: 5px;
+    padding-left: 1em;
+    color: #fff;
+}
+.card-head button{
+    background: transparent;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    
+}
+.card-head button ion-icon{
+    font-size: 32px;
+    color: #fff;
+    
+}
+.controls{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+.controls button{
+    background: transparent;
+    padding: .7em 2em;
+    border: 1px solid white;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.tasks{
+    width: 90%;
+    margin-top: 2em;
+}
+.task{
+
+    /* background-color: olive; */
+    border-bottom: 1px solid;
+    /* width: 100%; */
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.task-p{
+    display: flex;
+    flex-wrap: wrap;
+     /* background: red;  */
+     width: 100%;
+}
+.task button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.task button ion-icon{
+    font-size: 24px;
+    color: wheat;
+}
+.task-left{
+    display: flex;
+    gap: 1em;
+    width: 90%;
+    /* background: rebeccapurple; */
+}
+.task-number-and-tick{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
