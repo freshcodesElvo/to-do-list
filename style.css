@@ -1,3 +1,4 @@
+
 body{
     display: flex;
     justify-content: center;
@@ -6,6 +7,8 @@ body{
     background: url("https://mrwallpaper.com/images/hd/minimalist-neon-lights-4k-purple-40k82xyg4n3au9cn.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: "montserrat";
+   
 }
 .main-card{
     background: linear-gradient(90deg, rgba(1, 62, 43, 0.1) 0%, rgba(153, 153, 153, 0.1) 100%);
@@ -26,6 +29,7 @@ body{
     align-items: center;
     justify-content: space-between;
     width: 90%;
+ 
 }
 input{
     width: 82%;
@@ -89,6 +93,8 @@ input{
     background: transparent;
     border: none;
     cursor: pointer;
+    
+   
 }
 .task button ion-icon{
     font-size: 24px;
@@ -101,8 +107,15 @@ input{
     /* background: rebeccapurple; */
 }
 .task-number-and-tick{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+}
+#tick{ 
+    display: none;
+}
+
+.right-icons{
+    display: flex;
 }
