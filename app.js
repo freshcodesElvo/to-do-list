@@ -8,8 +8,9 @@ add_task_button.addEventListener("click", ()=>{
     let input_element = document.querySelector(".input-element").value;
 
 
-    if(!input_element  == " ")
+    if(!input_element  == "")
     {
+        
         task_number++;
         let added_task =  document.createElement('div')
         added_task.innerHTML = `<div class="task">
@@ -30,20 +31,20 @@ add_task_button.addEventListener("click", ()=>{
                 </div>`
         tasks.appendChild(added_task)
 
-        document.querySelector(".input-element").value = ""
-
-        //tick btn
-        let tick_task_btn = document.querySelector(".tick-task-btn");
-        let task_p = document.querySelector(".task-p");
-        tick_task_btn.addEventListener("click", ()=>{
-            task_p.style.textDecoration = "line-through"
-        })
-     
+        let tick_task_btn = added_task.querySelector(".tick-task-btn");
+        let task_p = added_task.querySelector(".task-p");
+        tick_task_btn.addEventListener("click", () => {
+            task_p.style.textDecoration = "line-through";
+            console.log("Task completed!");
+        });
         
+
+        document.querySelector(".input-element").value = ""
+       
+
     }
     else{
         prompt(`weeeee`)
-
     }
 
      
