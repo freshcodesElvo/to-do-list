@@ -1,7 +1,8 @@
-
 let add_task_button = document.querySelector(".add-task-button");
 let task_number = 0;
 let completed_tasks = 0;
+let incompleted_tasks = 0;
+let incomplete_btn = document.querySelector(".incomplete-btn")
 
 add_task_button.addEventListener("click", ()=>{
     let tasks = document.querySelector(".tasks")
@@ -10,7 +11,9 @@ add_task_button.addEventListener("click", ()=>{
 
     if(!input_element  == "")
     {
+        incompleted_tasks++
         task_number++;
+        incomplete_btn.innerText = `Incomplete ${incompleted_tasks}`
         
         let added_task =  document.createElement('div')
         added_task.classList.add("task") 
@@ -26,7 +29,6 @@ add_task_button.addEventListener("click", ()=>{
                         <button id ="tick">
                            <ion-icon name="checkmark-circle-outline"></ion-icon>
                         </button>
-
 
 
                         </div>
@@ -51,41 +53,35 @@ add_task_button.addEventListener("click", ()=>{
         let task_p = added_task.querySelector("#task-p")
 
 
-        
         tick_task_btn.addEventListener("click", () => {
              task_p.style.textDecoration = "line-through";
              tick.style.display = "block"
              tick_task_btn.style.display = "none"
              completed_tasks++
+             incompleted_tasks--
              document.querySelector(".complete-btn").innerText = `Completed ${completed_tasks}`
+              incomplete_btn.innerText = `Incomplete.. ${incompleted_tasks}`
          });
-
-
 
          tick.addEventListener("click", ()=>{
             tick_task_btn.style.display = "block"
             tick.style.display = "none"
             task_p.style.textDecoration = "none";
-            completed_tasks--
-             document.querySelector(".complete-btn").innerText = `Completed ${completed_tasks}`
 
-           
+            completed_tasks--
+            
+
+
+             document.querySelector(".complete-btn").innerText = `Completed ${completed_tasks}`
+              incompleted_tasks++
+              incomplete_btn.innerText = `Incomplete.. ${incompleted_tasks}`
+            
+
          })
         
-
-        
-        //  tick.addEventListener("click", ()=>{
-
-
-        //  })
-
-        // $(document).on("click", "#tick-task-btn", function (){
-        //     let task_p = $(this).closest("div").closest("p");
-        //     console.log(task_p);
-        // })
         document.querySelector(".input-element").value = ""
     }
     else{
-        prompt(`Please inert a`)
+        prompt(`Please insert a task`)
     }
 })
