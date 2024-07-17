@@ -40,7 +40,7 @@ add_task_button.addEventListener("click", ()=>{
                     </div>
                     <div class="right-icons">
                     <button>
-                        <ion-icon name="create-outline"></ion-icon>
+                        <ion-icon id="edit-task-btn" name="create-outline"></ion-icon>
                     </button>
                     <button id="cancel-task-btn">
                         <ion-icon name="trash-outline"></ion-icon>
@@ -114,11 +114,37 @@ add_task_button.addEventListener("click", ()=>{
          })
         
         document.querySelector(".input-element").value = ""
+
+
+        let edit_task_btn = added_task.querySelector("#edit-task-btn")
+
+        edit_task_btn.addEventListener("click", ()=>{
+            let create_edit_input_div = document.createElement("div")
+            create_edit_input_div.classList.add("input-element-edit-div")
+            create_edit_input_div.innerHTML = 
+            `
+            <input id="input-element-edit" type="text">
+            <button id="confirm-edit">OK</button>
+            `
+            tasks.appendChild(create_edit_input_div)
+            //.querySelector("#input-element-edit").innerHTML = input_element
+
+            edit_task_btn.style.display = "none"
+    
+                create_edit_input_div.querySelector("#confirm-edit").addEventListener("click", ()=>{
+                console.log("wozahh yelaa")
+                input_element.value = create_edit_input_div.querySelector("#input-element-edit").value
+                added_task.querySelector("#task-p").innerText = create_edit_input_div.querySelector("#input-element-edit").value
+                create_edit_input_div.style.display = "none"
+                edit_task_btn.style.display = "block"
+            })
+       
+        })
     }   
     else{
         prompt(`Please insert a task`);
     }
-  
+
 })
 let delete_all_tasks;
 let delete_all_is_visible = false;
@@ -157,6 +183,4 @@ delete_all_btn.addEventListener("click", ()=>{
     else{
         prompt(`weee`)
     }
-
-
 })
